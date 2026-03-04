@@ -1,0 +1,150 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.alert {
+  border-radius: 10px;
+}
+
+/* Dashboard layout and pastel card styles */
+.dashboard {
+  color: #222;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 16px;
+}
+
+/* Navbar styles */
+.navbar { border-radius: 12px; }
+.search-form { width: 580px; max-width: 60%; }
+.search-input { padding-left: 18px; border-radius: 50px; box-shadow: 0 4px 12px rgba(20,30,60,0.04); border: 1px solid rgba(0,0,0,0.06); }
+.search-btn { color: rgba(0,0,0,0.5); margin-left: -44px; }
+.btn-icon { width:38px; height:38px; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; border: none; box-shadow:none; }
+.btn-icon i { font-size:16px; color: #222; }
+.avatar-sm { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:#f6f7fb; }
+.user-info span { font-weight:600; color:#222; }
+
+/* make navbar search smaller on mobile */
+@media (max-width: 992px) {
+  .search-form { max-width: 420px; width: 50%; }
+}
+
+@media (max-width: 576px) {
+  .search-form { display:none; }
+}
+
+.cards-grid .section-title h5 {
+  font-weight: 600;
+}
+
+.food-card {
+  padding: 16px;
+  border-radius: 12px;
+  min-height: 150px;
+  position: relative;
+}
+
+.food-card .card-top .date {
+  font-size: 12px;
+  color: #666;
+}
+
+.food-card .more {
+  color: rgba(0,0,0,0.45);
+}
+
+.food-card .food-name {
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.food-card .muted {
+  color: rgba(0,0,0,0.55);
+}
+
+.food-card .avatars .avatar { font-size:14px; }
+
+.food-card .progress { background: rgba(255,255,255,0.4); height:8px; border-radius:8px; }
+.food-card .progress .progress-bar { background: rgba(0,0,0,0.15); height:8px; border-radius:8px; }
+
+.card-actions a { margin-left:6px; }
+
+/* Pastel palettes */
+.pastel-green { background: linear-gradient(180deg, #f2fbf4 0%, #e6fff1 100%); }
+.pastel-yellow { background: linear-gradient(180deg, #fffaf0 0%, #fff2d9 100%); }
+.pastel-pink { background: linear-gradient(180deg, #fff2f6 0%, #ffeef4 100%); }
+.pastel-blue { background: linear-gradient(180deg, #f4fbff 0%, #eaf7ff 100%); }
+
+/* Sidebar */
+.sidebar { border-radius: 14px; }
+.messages-list .message { padding: 10px 0; }
+.messages-list .avatar-sm { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:#fff; }
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .cards-grid .col-md-4 { flex: 0 0 50%; max-width:50%; }
+}
+
+@media (max-width: 576px) {
+  .cards-grid .col-sm-6 { flex: 0 0 100%; max-width:100%; }
+}
+
+/* Large single fun fact styling */
+.fun-fact-large { font-size: 1.15rem; font-weight: 600; color: #1f2937; }
+.fun-fact-large .small-emoji { font-size: 20px; }
+.fun-fact-large .fact-text { margin-top: 6px; line-height: 1.35; }
+
+/* New aesthetic button styles */
+.btn-aesthetic {
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(35, 47, 63, 0.08);
+  transition: transform .08s ease, box-shadow .12s ease;
+}
+.btn-aesthetic:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(35,47,63,0.12); }
+.btn-aesthetic:active { transform: translateY(0); box-shadow: 0 6px 18px rgba(35,47,63,0.08); }
+
+/* Chart container to prevent continuous resize loops */
+.chart-wrapper { height:220px; position:relative; max-height:260px; overflow:hidden; }
+.chart-wrapper canvas { display:block; width:100% !important; height:100% !important; }
+
+
+.btn-aesthetic--add { background: linear-gradient(90deg, #36D399 0%, #22C55E 100%); }
+.btn-aesthetic--primary { background: linear-gradient(90deg, #7C7CFF 0%, #5A5AE0 100%); }
+.btn-aesthetic--danger { background: linear-gradient(90deg, #FF8BA7 0%, #FF5C7A 100%); }
+.btn-aesthetic--logout { background: linear-gradient(90deg, #FFFFFF 0%, #F8FAFC 100%); color:#1f2937; border:1px solid rgba(30,41,59,0.06); box-shadow:none; }
+
+.btn-aesthetic-sm { padding: 0.28rem 0.6rem; border-radius: 9px; font-size: 0.86rem; }
+
+/* Make icon-only small buttons look cohesive */
+.btn-aesthetic-icon { width:38px; height:38px; display:inline-flex; align-items:center; justify-content:center; }
+
+/* Auth card styles to match dashboard theme */
+.auth-card { border-radius: 14px; overflow: hidden; }
+.auth-header { background: linear-gradient(90deg, #f8fafc 0%, #eef2ff 100%); padding-bottom: 18px; }
+.auth-header h3 { font-weight: 700; margin-top: 6px; }
+.auth-emoji { font-size: 26px; }
+.auth-card .form-control { border-radius: 10px; }
+.auth-card .alert { border-radius: 10px; }
+
+@media (max-width: 576px) {
+  .auth-card { width: 92% !important; }
+}

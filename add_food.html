@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add New Food</h2>
+<form method="POST">
+  <div class="mb-2">Food Name: <input type="text" name="name" required></div>
+  <div class="mb-2">Expiry Date: <input type="date" name="expiry_date" required></div>
+  <div class="mb-2">Quantity: <input type="number" step="0.01" name="quantity" value="1" required></div>
+  <div class="mb-2">Unit: <select name="unit"><option>units</option><option>kg</option><option>g</option><option>litre</option></select></div>
+  <div class="mb-2">Added Date (optional): <input type="date" name="added_date"></div>
+  <button type="submit">Add Food</button>
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>📊 Reports</h2>
+    <div class="text-muted small">Last 5 months</div>
+  </div>
+
+  <div class="card p-4 mb-4 shadow-sm">
+    <canvas id="reportsChart" style="height:380px;"></canvas>
+  </div>
+
+  <div class="card p-3 shadow-sm">
+    <h5>Details</h5>
+    <p class="small text-muted">This view shows the aggregated consumed and wasted amounts per month for the current and previous four months. Use this page to monitor trends and identify waste hotspots.</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const labels = {{ labels|tojson }};
+  const consumed = {{ consumed|tojson }};
+  const wasted = {{ wasted|tojson }};
+  const ctx = document.getElementById('reportsChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'Consumed', data: consumed, backgroundColor: 'rgba(54,162,235,0.8)' },
+        { label: 'Wasted', data: wasted, backgroundColor: 'rgba(255,99,132,0.8)' }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'top' } },
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+});
+</script>
+
+{% endblock %}

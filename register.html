@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+  <div class="card auth-card shadow p-0" style="width: 380px; overflow: hidden;">
+    <div class="auth-header text-center py-4">
+      <div class="auth-emoji">🥗</div>
+      <h3 class="mb-0">Create Account</h3>
+      <div class="small text-muted">Get started with your pantry</div>
+    </div>
+    <div class="p-4">
+      {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+      {% endif %}
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-aesthetic btn-aesthetic--primary w-100">Register</button>
+      </form>
+      <p class="text-center mt-3">
+        Already registered? <a href="{{ url_for('login') }}">Login</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
